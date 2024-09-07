@@ -1,0 +1,224 @@
+.container{
+    /* padding: 10px; */
+    width: 100%;
+    position: fixed;
+}
+.head-condainer{
+    /* background-color: rgba(56, 56, 148, 0.664); */
+    /* background-image: url('./images/djhome.webp'); */
+    width: 100%;
+    height: 100vh; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+.serach-container{
+    width: 100%;
+    margin: 0 60px;
+}
+.bannerHeading .p-input-icon-left{
+    width: 100%;
+    margin-bottom: 20px;
+}
+.card-section{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.card{
+    display: flex;
+    width: 46%;
+    margin: 10px;
+}
+.card .p-card{
+    width: 100%;
+}
+.cardInside{
+    display: flex;
+}
+.bannerHeading h1{
+    font-size: 58px;
+}
+.bannerHeading div{
+    text-align: center;
+}
+.filtering{
+    justify-content: center;
+    margin-top: 20px;
+    display: flex;
+    gap: 8px;
+}
+.filter-button{
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+}
+.new-event{
+    padding: 20px;
+    border: none;
+    background-color: #106186;
+    width: 115px;
+    border-radius: 25%;
+    background: linear-gradient(135deg, #b1112c, #376dd1);
+    color: #fff;
+    position: relative;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.new-event::before {
+    content: '';
+    position: absolute;
+    top: -235%;
+    left: -235%;
+    width: 200%;
+    height: 200%;
+    background: rgba(255, 255, 255, 0.2); /* Shine color */
+    transform: rotate(45deg); /* Rotate shine */
+    transition: all 0.5s ease-in-out; /* Transition for shine */
+}
+.new-event:hover::before {
+    top: -30%;
+    left: -30%;
+    background: rgba(255, 255, 255, 0.445); /* Brighter shine on hover */
+}
+.new-event:focus {
+    outline: none; /* Remove focus outline */
+}
+.new-event-form{
+    /* background-color: rgb(123, 123, 175); */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 9%;
+    /* background: linear-gradient(135deg, #000000, #727c86); */
+}
+.new-event-form input, .new-event-form textarea{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+}
+.activity{
+    display: flex;
+    justify-content: space-between;
+}
+.new-form-fields{
+    display: flex;
+    justify-content: space-between;
+    margin: 14px 0;
+}
+.filling-form{
+justify-content: center;
+display: flex;
+position: relative;
+}
+.add-Event-btn{
+    padding: 10px 20px;
+    background-color: #FFD700;
+    color: #483D8B;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.add-Event-btn:hover{
+    background-color: #FFA500;
+}
+.Searchinput{
+    padding: 6px !important;
+    width: 100%;
+    border-radius: 20px !important;
+}
+
+.add-new-event{
+position: absolute;
+left: 14px;
+bottom: 20px;
+}
+
+.new-event span{
+    font-size: 15px;
+    font-weight: bold;
+}
+.visit-running-event{
+    position: absolute;
+    right: 14px;
+    bottom: 20px;
+}
+.running-event{
+    padding: 20px;
+    border: none;
+    background-color: #106186;
+    width: 115px;
+    border-radius: 25%;
+    background: linear-gradient(135deg, #b1112c, #376dd1);
+    color: #fff;
+    position: relative;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.running-event::before {
+    content: '';
+    position: absolute;
+    bottom: -300%;
+    left: -250%;
+    width: 200%;
+    height: 200%;
+    background: rgba(255, 255, 255, 0.2); /* Shine color */
+    transform: rotate(-45deg); /* Rotate shine */
+    transition: all 0.5s ease-in-out; /* Transition for shine */
+}
+.running-event:hover::before {
+    bottom: -30%;
+    left: -30%;
+    background: rgba(255, 255, 255, 0.4); /* Brighter shine on hover */
+}
+.running-event:focus {
+    outline: none; /* Remove focus outline */
+}
+.running-event span{
+    font-size: 15px;
+    font-weight: bold;
+}
+.from-container{
+    transition: all 0.5s ease-in-out;
+    background-image: url('./images/djpanda.webp');
+    /* background: linear-gradient(105deg, #000000d2, #0644b8); */
+
+}
+.djboy{
+        position: absolute;
+        left: 0;
+}
+.djboy img{
+    width: 30%;
+    height: 30%;
+}
+.new-form-fields label{
+    color: rgb(194, 169, 169);
+    font-weight: 700;
+}
+.new-event-form button{
+    background: linear-gradient(135deg, #b1112c, #376dd1);
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+#search-area{
+    padding-left: 30px !important;
+}
