@@ -44,7 +44,7 @@
                           <div class="cardInside" >
                             <!-- <input type="text" v-model="item.name"> -->
                             <span><p>Name: <b> {{item.name}} </b><br> Designation: <b>{{item.desig}}</b><br>Department: <b>{{item.dep}}</b></p></span>
-                            <Button icon="pi pi-trash" class="p-button-rounded p-button-danger" />
+                            <Button icon="pi pi-trash" @click="deleteData(item.id)" class="p-button-rounded p-button-danger" />
                           </div>
                       </template>
                       
@@ -70,7 +70,7 @@
 // import HeaderComponent from "./components/HeaderComponent.vue";
 import InputText from 'primevue/inputtext';
 import Card from 'primevue/card';
-import { addDoc, collection, onSnapshot,query } from 'firebase/firestore';
+import { addDoc, collection, onSnapshot,query,deleteDoc,doc } from 'firebase/firestore';
 import db from "./db-connection/db";
 import { onUnmounted } from 'vue';
 import Button from 'primevue/button';
@@ -108,7 +108,9 @@ export default {
       var cardName = snapshot.docs.map((doc)=>{
         
         if (doc.exists()) {
-          let obj = { name : doc.data().name,
+          let obj = {
+            id: doc.id,
+             name : doc.data().name,
             desig : doc.data().designation,
             dep : doc.data().department
           };
@@ -120,7 +122,6 @@ export default {
       })
     });
     this.tempCardName = this.cardName;
-    console.log('this.cardName', this.cardName);
     
     onUnmounted(cardNameData)
   },
@@ -143,6 +144,13 @@ export default {
         department:this.nameDep
       });
       
+      this.hideForm = true;
+    },
+    deleteData(id){
+      deleteDoc(doc(db,'user',id));
+      setTimeout(() => {
+        location.reload();
+      }, 1000);
     }
   },
   watch:{
