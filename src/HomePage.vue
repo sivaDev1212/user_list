@@ -5,22 +5,29 @@
       <div class="head-condainer">
       <div class="serach-container">
         <div v-if="hideForm">
+          <h2>THE LIST OF USERS</h2>
           <button class="add-btn" @click="newData">new data</button>
         </div>
         <div v-if="!hideForm">
-          <div>
+          <h2>ADD USERS</h2>
+          <div class="add-form">
+            <div>
             <label for="" >Name</label>
-            <!-- <InputText type="text" v-model="addName" /> -->
+            <InputText type="text" v-model="nameUser" />
           </div>
           <div>
             <label for="" >Department</label>
-            <input type="text" v-model="nameDep">
+            <InputText type="text" v-model="nameDep" />
           </div>
           <div>
             <label for="" >Designation</label>
-            <input type="text" v-model="nameDesig">
+            <InputText type="text" v-model="nameDesig" />
           </div>
-          <button @click="addUser">Add data</button>
+          <Button label="Submit"  @click="addUser" class="p-button-success" icon="pi pi-check" iconPos="right" />
+          </div>
+          <Button label="Back to list page" @click="hideForm = true" icon="pi-chevron-left" />
+          <!-- <button @click="hideForm = true">Back to list page</button> -->
+          <Button label="Clear all" class="p-button-danger" @click="nameDep = '',nameDesig='',nameUser =''" />
         </div>
         <div class="bannerHeading" v-else>
               <!-- <h1>Discover the world of events</h1> -->
@@ -37,7 +44,7 @@
                           <div class="cardInside" >
                             <!-- <input type="text" v-model="item.name"> -->
                             <span><p>Name: <b> {{item.name}} </b><br> Designation: <b>{{item.desig}}</b><br>Department: <b>{{item.dep}}</b></p></span>
-                            
+                            <Button icon="pi pi-trash" class="p-button-rounded p-button-danger" />
                           </div>
                       </template>
                       
@@ -66,6 +73,8 @@ import Card from 'primevue/card';
 import { addDoc, collection, onSnapshot,query } from 'firebase/firestore';
 import db from "./db-connection/db";
 import { onUnmounted } from 'vue';
+import Button from 'primevue/button';
+
 
 export default {
   listData: null,
@@ -73,7 +82,8 @@ export default {
   components: {
     // HeaderComponent,
     InputText,
-    Card
+    Card,
+    Button
      // Register the component locally
   },
   // props: {
