@@ -5,7 +5,7 @@
       <div class="head-condainer">
       <div class="serach-container">
         <div v-if="hideForm">
-          <button @click="newData">new data</button>
+          <button class="add-btn" @click="newData">new data</button>
         </div>
         <div v-if="!hideForm">
           <div>
