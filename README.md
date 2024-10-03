@@ -1,4 +1,4 @@
-# conference-project
+# Employee listing-project
 
 ## Project setup
 ```
